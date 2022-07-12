@@ -34,6 +34,13 @@ export default function Main() {
         )
     }
 
+    const DishWithId = ({match}) => {
+        return (
+            <DishDetail dish={dishes.filter((dish) => dish.id === parseInt(match.params.dishId,10))[0]} 
+            comments={comments.filter((comment) => comment.dishId === parseInt(match.params.dishId,10))} />
+        );
+    }
+
     return (
         <div>
             <Header/>
@@ -41,6 +48,7 @@ export default function Main() {
                 <Route path="/home" component={HomePage} />
                 <Route exact path="/menu" component={() => <Menu dishes={dishes}/>} />
                 <Route exact path="/contactus" component={Contact} />
+                <Route path='/menu/:dishId' component={DishWithId} />
                 <Redirect to="/home"/>
             </Switch>
             <Footer/>
