@@ -3,7 +3,7 @@ import "./App.css";
 import { Navbar, NavbarBrand } from "reactstrap";
 import Menu from './components/MenuComponent';
 import { useState } from 'react';
-import { DISHES } from './shared/dish2.js';
+import { DISHES } from './shared/dish.js';
 
 function App() {
     const [dishes, setDish] = useState(DISHES);
