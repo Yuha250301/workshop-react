@@ -4,7 +4,7 @@ import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardImg, CardText, CardTitl
 
 function RenderDish({dish}) {
     return (
-        <div className="col-12 col-sm-5">
+        <div className="col-12">
         <Card>
             <CardImg top src={dish.image} alt={dish.name}/>
             <CardBody>
@@ -26,7 +26,7 @@ function RenderComment({comments}){
         );
     });
     return  (
-        <div className="col-12 col-sm-7">
+        <div className="col-12 ">
             <h2>Comments</h2>
             {comment}
         </div>
@@ -39,7 +39,10 @@ export default function DishDetail({dish, comments}) {
     return (
         <div className="container">
           <div className="row">
-            <Breadcrumb>
+            <Breadcrumb className="col-12">
+              <BreadcrumbItem>
+                <Link to="/home">Home</Link>
+              </BreadcrumbItem>
               <BreadcrumbItem>
                 <Link to="/menu">Menu</Link>
               </BreadcrumbItem>
